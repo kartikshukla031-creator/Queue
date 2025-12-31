@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>QueueLess</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>QueueLess</header>
+
+<div class="container">
+  <p class="subtitle">Select a service</p>
+
+  <div class="card" onclick="selectQueue('Hospital')">🏥 Hospital OPD</div>
+  <div class="card" onclick="selectQueue('Bank')">🏦 Bank Counter</div>
+  <div class="card" onclick="selectQueue('Restaurant')">🍽 Restaurant</div>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/ui.js"></script>
+</body>
+</html>
