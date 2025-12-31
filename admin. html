@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Panel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>Admin Dashboard</header>
+
+<div class="container">
+  <button onclick="serveNext()">Serve Next</button>
+  <button class="danger" onclick="clearQueue()">Clear Queue</button>
+  <p id="adminStatus"></p>
+</div>
+
+<script>
+function serveNext() {
+  const queue = localStorage.getItem("selectedQueue");
+  let data = JSON.parse(localStorage.getItem(queue)) || [];
+  data.shift();
+  localStorage.setItem(queue, JSON.stringify(data));
+  document.getElementById("adminStatus").innerText = "Next user served";
+}
+
+function clearQueue() {
+  const queue = localStorage.getItem("selectedQueue");
+  localStorage.setItem(queue, JSON.stringify([]));
+  document.getElementById("adminStatus").innerText = "Queue cleared";
+}
+</script>
+
+</body>
+</html>
