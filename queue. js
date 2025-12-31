@@ -1,0 +1,15 @@
+function joinQueue() {
+  const name = document.getElementById("username").value.trim();
+  const queue = localStorage.getItem("selectedQueue");
+
+  if (!name) {
+    alert("Please enter your name");
+    return;
+  }
+
+  let data = JSON.parse(localStorage.getItem(queue)) || [];
+  data.push(name);
+  localStorage.setItem(queue, JSON.stringify(data));
+
+  window.location.href = "status.html";
+}
