@@ -1,0 +1,4 @@
+function selectQueue(name) {
+  localStorage.setItem("selectedQueue", name);
+  window.location.href = "join.html";
+}
